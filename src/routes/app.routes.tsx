@@ -15,7 +15,7 @@ type AppRoutes = {
     home: undefined;
     history: undefined;
     profile: undefined;
-    exercise: undefined;
+    exercise: { exerciseId: string };
 }
 
 export type AppNavigatorRoutesProps = BottomTabNavigationProp<AppRoutes>
@@ -40,13 +40,13 @@ export function AppRoutes() {
                 paddingBottom: sizes[10],
                 paddingTop: sizes[6],
             }
-        }} >
+        }}>
             <Screen
                 name="home"
                 component={Home}
                 options={{
                     tabBarIcon: ({color}) => (
-                        <HomeSvg fill={color} width={iconSize} height={iconSize} />
+                        <HomeSvg fill={color} width={iconSize} height={iconSize}/>
                     )
                 }}
             />
@@ -55,7 +55,7 @@ export function AppRoutes() {
                 component={History}
                 options={{
                     tabBarIcon: ({color}) => (
-                        <HistorySvg fill={color} width={iconSize} height={iconSize} />
+                        <HistorySvg fill={color} width={iconSize} height={iconSize}/>
                     )
                 }}
             />
@@ -64,7 +64,7 @@ export function AppRoutes() {
                 component={Profile}
                 options={{
                     tabBarIcon: ({color}) => (
-                        <ProfileSvg fill={color} width={iconSize} height={iconSize} />
+                        <ProfileSvg fill={color} width={iconSize} height={iconSize}/>
                     )
                 }}
             />
